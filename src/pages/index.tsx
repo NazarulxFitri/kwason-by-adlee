@@ -58,8 +58,8 @@ export default function Home() {
           }}
         >
           <Grid container>
-            {bannerItems?.map((i) => (
-              <SwiperSlide>
+            {bannerItems?.map((i, idx) => (
+              <SwiperSlide key={idx}>
                 <Grid item>
                   <Image
                     src={i.url}
