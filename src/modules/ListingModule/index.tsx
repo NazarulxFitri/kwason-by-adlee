@@ -18,7 +18,7 @@ const ListingModule: React.FC<ListingModuleProps> = () => {
   return (
     <Box mt={8} className={`animate__animated animate__fadeInUp`}>
       <Text
-        sx={{ fontSize: "48px", textAlign: "center"}}
+        sx={{ fontSize: "48px", textAlign: "center", fontFamily: `${fontNothingYouCouldDo.style.fontFamily} !important` || "auto"}}
         className={fontNothingYouCouldDo?.className}
         text={`Our Menu`}
       />

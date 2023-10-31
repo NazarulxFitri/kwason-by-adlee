@@ -22,7 +22,7 @@ const Logo: React.FC<LogoProps> = ({ pos }) => {
       }}
     >
       <Text
-        sx={{ fontSize: "48px" }}
+        sx={{ fontSize: "48px", fontFamily: `${fontNothingYouCouldDo.style.fontFamily} !important` || "auto" }}
         className={fontNothingYouCouldDo.className}
         text={`Kwason`}
       />

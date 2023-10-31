@@ -56,7 +56,7 @@ const CardListing: React.FC<CardListingProps> = ({ item }) => {
           }}
         >
           <Text
-            sx={{ fontSize: "24px" }}
+            sx={{ fontSize: "24px", fontFamily: `${fontNothingYouCouldDo.style.fontFamily} !important` || "auto" }}
             className={fontNothingYouCouldDo.className}
             text={item.name}
           />
