@@ -1,9 +1,11 @@
 import { CartIcon, Text } from "@/components";
+import { cartItems } from "@/state/atom";
 import { Box } from "@mui/material";
 import { Nothing_You_Could_Do } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { useRecoilState } from "recoil";
 
 interface CardListingProps {
   item: {
@@ -16,13 +18,24 @@ interface CardListingProps {
   };
 }
 
-const fontNothingYouCouldDo = Nothing_You_Could_Do({
+const nothingYouCouldDo = Nothing_You_Could_Do({
   subsets: ["latin"],
   weight: ["400"],
 });
 
 const CardListing: React.FC<CardListingProps> = ({ item }) => {
   const [showDetail, setShowDetail] = useState(false);
+
+  const [cart, setCart] = useRecoilState(cartItems);
+
+  console.log("xxx cart", cart)
+
+
+  function handleClick() {
+    const newItem = { name: item?.name, price: item?.price };
+    // @ts-ignore
+    setCart(existedArray => [...existedArray, newItem]);
+  }
 
   return (
     <Box
@@ -48,6 +61,7 @@ const CardListing: React.FC<CardListingProps> = ({ item }) => {
             borderTopRightRadius: "16px",
             borderTopLeftRadius: "16px",
             color: "#FFF",
+            cursor: "pointer",
             p: 2,
             position: "absolute",
             bottom: "0",
@@ -56,8 +70,12 @@ const CardListing: React.FC<CardListingProps> = ({ item }) => {
           }}
         >
           <Text
-            sx={{ fontSize: "24px", fontFamily: `${fontNothingYouCouldDo.style.fontFamily} !important` || "auto" }}
-            className={fontNothingYouCouldDo.className}
+            sx={{
+              fontSize: "24px",
+              fontFamily:
+                `${nothingYouCouldDo.style.fontFamily} !important` || "auto",
+            }}
+            className={nothingYouCouldDo.className}
             text={item.name}
           />
           <Text
@@ -79,11 +97,13 @@ const CardListing: React.FC<CardListingProps> = ({ item }) => {
               <Box>
                 <CartIcon size={`20px`} />
               </Box>
-              <Text
-                sx={{ fontSize: "12px", fontWeight: "300", my: "auto" }}
-                variant="body1"
-                text="Quick Add"
-              />
+              <Box onClick={handleClick}>
+                <Text
+                  sx={{ fontSize: "12px", fontWeight: "300", my: "auto" }}
+                  variant="body1"
+                  text="Quick Add"
+                />
+              </Box>
             </Box>
             <Box
               sx={{
@@ -97,11 +117,11 @@ const CardListing: React.FC<CardListingProps> = ({ item }) => {
               gap={1}
             >
               <Link href={`/detail?id=${item.id}`}>
-              <Text
-                sx={{ fontSize: "12px", fontWeight: "300", my: "auto" }}
-                variant="body1"
-                text="More detail"
-              />
+                <Text
+                  sx={{ fontSize: "12px", fontWeight: "300", my: "auto" }}
+                  variant="body1"
+                  text="More detail"
+                />
               </Link>
             </Box>
           </Box>
