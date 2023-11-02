@@ -25,7 +25,7 @@ const Detail = () => {
   function handleClick() {
     const newItem = { name: item?.name, price: item?.price };
     // @ts-ignore
-    setCart(existedArray => [...existedArray, newItem]);
+    setCart((existedArray) => [...existedArray, newItem]);
   }
 
   return (
@@ -58,6 +58,7 @@ const Detail = () => {
             <Text
               fontWeight={300}
               mt={1}
+              sx={{ fontSize: "24px"}}
               variant="body1"
               text={`RM${item?.price}`}
             />
@@ -69,32 +70,32 @@ const Detail = () => {
             />
           </Box>
           <Box mt={4} display={"flex"} columnGap={2}>
-            <TextField
-              value={qty}
-              sx={{
-                width: "80px",
-                "& .MuiOutlinedInput-notchedOutline": {
-                  borderColor: "#D9D9D9",
-                },
-                "& .MuiOutlinedInput-root": {
-                  borderRadius: "0",
-                },
-              }}
-              type="number"
-              variant="outlined"
-              label="Qty"
-              InputLabelProps={{ shrink: true }}
-              InputProps={{ inputProps: { min: 1, max: 99 } }}
-              onChange={(e) => setQty(+e.currentTarget.value)}
-            />
             <Box
               sx={{
-                border: "1px solid #D9D9D9",
+                border: "1px solid #bf9b30",
                 cursor: "pointer",
                 my: "auto",
                 textAlign: "center",
                 py: 2,
+                position: "relative",
                 width: "100%",
+                "&:after": {
+                  content: '""',
+                  position: "absolute",
+                  bottom: "0",
+                  left: "0",
+                  width: "100%",
+                  height: "100%",
+                  transform: "scaleY(0)",
+                  transformOrigin: "bottom center",
+                  background: "#bf9b30",
+                  zIndex: "-1",
+                  transition: "transform 0.3s",
+                },
+                "&:hover::after": {
+                  transform: "scaleY(1)",
+                  boxShadow: "1px 1px 10px #bf9b30",
+                },
               }}
               onClick={handleClick}
             >

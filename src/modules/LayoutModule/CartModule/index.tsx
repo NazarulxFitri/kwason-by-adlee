@@ -1,15 +1,31 @@
 // @ts-nocheck
-import { CloseIcon, Text } from "@/components";
+import { CloseIcon, MinusIcon, Text } from "@/components";
 import { cartItems } from "@/state/atom";
 import { Box } from "@mui/material";
-import { useRecoilValue } from "recoil";
+import { useRecoilState } from "recoil";
 
 interface CartModuleProps {
   setShowCart: (value: boolean) => void;
 }
 
 const CartModule: React.FC<CartModuleProps> = ({ setShowCart }) => {
-  const cart = useRecoilValue(cartItems)
+  const [cart, setCart] = useRecoilState(cartItems);
+
+  let totalAmount = 0;
+  for (let i = 0; i < cart.length; i++) {
+    totalAmount += cart?.[i]?.price;
+  }
+
+  function handleRemove(id: number) {
+    let temp = [];
+
+    for (let i = 0; i < cart.length; i++) {
+      if (i !== id) {
+        temp.push(cart[i]);
+      }
+    }
+    setCart(temp);
+  }
 
   return (
     <Box
@@ -18,11 +34,11 @@ const CartModule: React.FC<CartModuleProps> = ({ setShowCart }) => {
         background: "#FFF",
         boxShadow: "1px 1px 10px #D9D9D9",
         p: 4,
-        position: "absolute",
+        position: "fixed",
         height: "100%",
         right: "0",
         top: "0",
-        width: { xs: "100%", md: "400px" },
+        width: { xs: "100%", md: "440px" },
         zIndex: 1,
       }}
     >
@@ -39,7 +55,7 @@ const CartModule: React.FC<CartModuleProps> = ({ setShowCart }) => {
       <Box mt={2}>
         {cart?.map((i, idx) => (
           <Box
-          key={idx}
+            key={idx}
             sx={{
               display: "flex",
               justifyContent: "space-between",
@@ -47,7 +63,13 @@ const CartModule: React.FC<CartModuleProps> = ({ setShowCart }) => {
               py: 2,
             }}
           >
-            <Box>
+            <Box display="flex">
+              <Box
+                sx={{ my: "auto", mr: 1, cursor: "pointer" }}
+                onClick={() => handleRemove(idx)}
+              >
+                <MinusIcon size={"16px"} color={"#B33A3A"} />
+              </Box>
               <Text sx={{ fontWeight: "300" }} variant="body1" text={i.name} />
             </Box>
             <Box>
@@ -59,6 +81,28 @@ const CartModule: React.FC<CartModuleProps> = ({ setShowCart }) => {
             </Box>
           </Box>
         ))}
+      </Box>
+      <Box mt={4}>
+        <Box textAlign="right">
+          <Text
+            variant="body1"
+            sx={{ fontWeight: "300", fontSize: "20px" }}
+            text={`Subtotal : <b>RM${totalAmount}</b>`}
+          />
+        </Box>
+        <Box mt={4} sx={{ border: "1px solid #D8D8D8", p: 2 }}>
+          <Text
+            variant="body1"
+            sx={{ fontWeight: "300", textAlign: "center" }}
+            text={`Proceed`}
+          />
+        </Box>
+        <Text
+          mt={1}
+          variant="body1"
+          sx={{ fontWeight: "300", fontSize: "12px" }}
+          text={`By clicking proceed button, you will be navigated to Whatsapp for order confirmation`}
+        />
       </Box>
     </Box>
   );

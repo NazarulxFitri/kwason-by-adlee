@@ -1,14 +1,13 @@
 import { InstagramIcon, Logo, Text } from "@/components";
-import { Box, useMediaQuery, useTheme } from "@mui/material";
+import { Box } from "@mui/material";
 import Link from "next/link";
 
 const FooterModule = () => {
-  const theme = useTheme();
 
   return (
     <Box p={4} mt={4}>
       <Box display="flex" flexDirection={{ xs: "column", md: "row" }} justifyContent={"center"} columnGap={4}>
-        <Box>
+        <Box sx={{ width: "fit-content", mx: {xs: "auto",md :"unset"}}}>
           <Logo />
         </Box>
         <Box display={"flex"} m={{ xs: "32px auto", md: "auto 0" }}>

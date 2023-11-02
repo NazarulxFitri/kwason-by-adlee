@@ -28,6 +28,7 @@ const ListingModule: React.FC<ListingModuleProps> = () => {
       />
       <Text
         sx={{
+          color: "#BF9B30",
           fontSize: "16px",
           fontWeight: "300",
           mx: "auto",
