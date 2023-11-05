@@ -1,11 +1,12 @@
+// @ts-nocheck
 import { Text } from "@/components";
-import { cartItems } from "@/state/atom";
+import { bannerMessage, cartItems, orderSummary } from "@/state/atom";
 import { useGetItemListings } from "@/utils/useGetItemListings";
 import { Box, Container, Grid, TextField } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useRecoilState } from "recoil";
 
 export interface ExistingCartConfig {
@@ -21,11 +22,36 @@ const Detail = () => {
 
   const [qty, setQty] = useState(1);
   const [cart, setCart] = useRecoilState(cartItems);
+  const [showSummary, setShowSummary] = useRecoilState(orderSummary);
 
   function handleClick() {
-    const newItem = { name: item?.name, price: item?.price };
-    // @ts-ignore
+    let temp = [];
+    const sameItem = !!cart?.find((x) => x.name === item?.name);
+    const sameItemIdx = cart?.findIndex((x) => x.name === item?.name);
+
+    if (sameItem) {
+      for (let i = 0; i < cart.length; i++) {
+
+        if (i === sameItemIdx) {
+          temp.push({
+            name: item?.name,
+            price: item?.price,
+            qty: 10
+          })
+        }
+        else {
+          temp.push(cart[i]);
+        }
+      }
+      setCart(temp);
+      return;
+    }
+
+    const newItem = { name: item?.name, price: item?.price, qty: qty };
+
     setCart((existedArray) => [...existedArray, newItem]);
+
+    setShowSummary(true);
   }
 
   return (
@@ -58,7 +84,7 @@ const Detail = () => {
             <Text
               fontWeight={300}
               mt={1}
-              sx={{ fontSize: "24px"}}
+              sx={{ fontSize: "24px" }}
               variant="body1"
               text={`RM${item?.price}`}
             />
@@ -69,39 +95,72 @@ const Detail = () => {
               text={`${item?.description}`}
             />
           </Box>
-          <Box mt={4} display={"flex"} columnGap={2}>
-            <Box
-              sx={{
-                border: "1px solid #bf9b30",
-                cursor: "pointer",
-                my: "auto",
-                textAlign: "center",
-                py: 2,
-                position: "relative",
-                width: "100%",
-                "&:after": {
-                  content: '""',
-                  position: "absolute",
-                  bottom: "0",
-                  left: "0",
+          <Grid container mt={4} gap={2}>
+            <Grid item md={12}>
+              <Box>
+                <TextField
+                  value={qty}
+                  type="number"
+                  variant="outlined"
+                  label="Qty"
+                  InputLabelProps={{ shrink: true }}
+                  inputProps={{ min: 1, max: 99 }}
+                  sx={{
+                    width: "80px",
+                    "& .MuiInputLabel-root.Mui-focused": {
+                      color: "#BF9B30",
+                    },
+                    "& .MuiOutlinedInput-root": {
+                      borderRadius: "0",
+                    },
+                    "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline":
+                      {
+                        borderColor: "#BF9B30",
+                      },
+                  }}
+                  onChange={(e) => setQty(+e.currentTarget.value)}
+                />
+              </Box>
+            </Grid>
+            <Grid item md={12}>
+              <Box
+                className={`animate__animated animate__headShake`}
+                sx={{
+                  border: "1px solid #bf9b30",
+                  cursor: "pointer",
+                  my: "auto",
+                  textAlign: "center",
+                  py: 2,
+                  position: "relative",
                   width: "100%",
-                  height: "100%",
-                  transform: "scaleY(0)",
-                  transformOrigin: "bottom center",
-                  background: "#bf9b30",
-                  zIndex: "-1",
-                  transition: "transform 0.3s",
-                },
-                "&:hover::after": {
-                  transform: "scaleY(1)",
-                  boxShadow: "1px 1px 10px #bf9b30",
-                },
-              }}
-              onClick={handleClick}
-            >
-              <Text variant="body1" text={`Add to cart`} />
-            </Box>
-          </Box>
+                  "&:after": {
+                    content: '""',
+                    position: "absolute",
+                    bottom: "0",
+                    left: "0",
+                    width: "100%",
+                    height: "100%",
+                    transform: "scaleY(0)",
+                    transformOrigin: "bottom center",
+                    background: "#bf9b30",
+                    zIndex: "-1",
+                    transition: "transform 0.3s",
+                  },
+                  "&:hover::after": {
+                    transform: "scaleY(1)",
+                    boxShadow: "1px 1px 10px #bf9b30",
+                  },
+                }}
+                onClick={handleClick}
+              >
+                <Text
+                  sx={{ fontWeight: "500" }}
+                  variant="body1"
+                  text={"buttonText"}
+                />
+              </Box>
+            </Grid>
+          </Grid>
         </Grid>
       </Grid>
     </Container>

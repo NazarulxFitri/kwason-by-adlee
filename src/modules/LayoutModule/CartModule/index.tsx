@@ -18,7 +18,6 @@ const CartModule: React.FC<CartModuleProps> = ({ setShowCart }) => {
 
   function handleRemove(id: number) {
     let temp = [];
-
     for (let i = 0; i < cart.length; i++) {
       if (i !== id) {
         temp.push(cart[i]);
@@ -43,7 +42,7 @@ const CartModule: React.FC<CartModuleProps> = ({ setShowCart }) => {
       }}
     >
       <Box display="flex" justifyContent={"space-between"}>
-        <Text variant="h2" text="My Cart" />
+        <Text variant="body1" text="My Cart" />
         <Box
           my={"auto"}
           sx={{ cursor: "pointer" }}
@@ -72,7 +71,14 @@ const CartModule: React.FC<CartModuleProps> = ({ setShowCart }) => {
               </Box>
               <Text sx={{ fontWeight: "300" }} variant="body1" text={i.name} />
             </Box>
-            <Box>
+            <Box display="flex">
+              <Box sx={{ my: "auto", mr: 1, cursor: "pointer" }}>
+                <Text
+                  sx={{ fontWeight: "300" }}
+                  variant="body1"
+                  text={`${i.qty} x `}
+                />
+              </Box>
               <Text
                 sx={{ fontWeight: "300" }}
                 variant="body1"

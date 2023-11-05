@@ -31,4 +31,12 @@ export const bannerMessage = atom({
   ]
 });
 
+export const orderSummary = atom({
+  key: "orderSummary",
+  default: false,
+  effects: [
+    sessionStorageEffect('orderSummary'),
+  ]
+});
+
 

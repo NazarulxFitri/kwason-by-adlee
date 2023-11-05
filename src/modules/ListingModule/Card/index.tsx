@@ -1,6 +1,6 @@
 // @ts-nocheck
 import { Text } from "@/components";
-import { bannerMessage, cartItems } from "@/state/atom";
+import { bannerMessage, cartItems, orderSummary } from "@/state/atom";
 import { Box, Grid } from "@mui/material";
 import { Nothing_You_Could_Do } from "next/font/google";
 import Image from "next/image";
@@ -28,6 +28,7 @@ const CardListing: React.FC<CardListingProps> = ({ item }) => {
   const [showDetail, setShowDetail] = useState(false);
   const [cart, setCart] = useRecoilState(cartItems);
   const [banner, setBanner] = useRecoilState(bannerMessage);
+  const [showSummary, setShowSummary] = useRecoilState(orderSummary);
 
   function handleClick() {
     const newItem = { name: item?.name, price: item?.price };
@@ -35,6 +36,7 @@ const CardListing: React.FC<CardListingProps> = ({ item }) => {
     setBanner({
       message: `You have successfully added <b>${item?.name}</b> into your cart`,
     });
+    setShowSummary(true);
   }
 
   return (
@@ -44,7 +46,7 @@ const CardListing: React.FC<CardListingProps> = ({ item }) => {
         position: "relative",
         transition: "margin .5s",
         "&:hover": {
-          mt: -0.5,
+          mt: -1,
         },
       }}
       onMouseOver={() => {
@@ -98,19 +100,39 @@ const CardListing: React.FC<CardListingProps> = ({ item }) => {
               <Box
                 onClick={handleClick}
                 sx={{
-                  border: "1px solid #BF9B30",
+                  border: "1px solid #bf9b30",
+                  cursor: "pointer",
+                  my: "auto",
+                  textAlign: "center",
                   py: 2,
-                  display: "flex",
-                  justifyContent: "center",
-                  transition: "margin .5s",
-                  "&:hover": {
-                    boxShadow: "1px 1px 10px #BF9B30",
-                    mt: -0.5,
+                  position: "relative",
+                  width: "100%",
+                  "&:after": {
+                    content: '""',
+                    position: "absolute",
+                    bottom: "0",
+                    left: "0",
+                    width: "100%",
+                    height: "100%",
+                    transform: "scaleY(0)",
+                    transformOrigin: "bottom center",
+                    background: "#bf9b30",
+                    zIndex: "-1",
+                    transition: "transform 0.3s",
+                  },
+                  "&:hover::after": {
+                    transform: "scaleY(1)",
+                    boxShadow: "1px 1px 10px #bf9b30",
                   },
                 }}
               >
                 <Text
-                  sx={{ fontSize: "12px", fontWeight: "300", my: "auto" }}
+                  sx={{
+                    color: "#bf9b30",
+                    fontSize: "12px",
+                    fontWeight: "500",
+                    my: "auto",
+                  }}
                   variant="body1"
                   text="Quick add"
                 />
@@ -120,13 +142,28 @@ const CardListing: React.FC<CardListingProps> = ({ item }) => {
               <Box
                 sx={{
                   border: "1px solid #FFF",
+                  cursor: "pointer",
+                  my: "auto",
+                  textAlign: "center",
                   py: 2,
-                  display: "flex",
-                  justifyContent: "center",
-                  transition: "margin .5s",
-                  "&:hover": {
+                  position: "relative",
+                  width: "100%",
+                  "&:after": {
+                    content: '""',
+                    position: "absolute",
+                    bottom: "0",
+                    left: "0",
+                    width: "100%",
+                    height: "100%",
+                    transform: "scaleY(0)",
+                    transformOrigin: "bottom center",
+                    background: "#FFF",
+                    zIndex: "-1",
+                    transition: "transform 0.3s",
+                  },
+                  "&:hover::after": {
+                    transform: "scaleY(1)",
                     boxShadow: "1px 1px 10px #FFF",
-                    mt: -0.5,
                   },
                 }}
                 gap={1}
@@ -136,7 +173,7 @@ const CardListing: React.FC<CardListingProps> = ({ item }) => {
                   href={`/detail?id=${item.id}`}
                 >
                   <Text
-                    sx={{ fontSize: "12px", fontWeight: "300", my: "auto" }}
+                    sx={{ fontSize: "12px", fontWeight: "500", my: "auto" }}
                     variant="body1"
                     text="More detail"
                   />

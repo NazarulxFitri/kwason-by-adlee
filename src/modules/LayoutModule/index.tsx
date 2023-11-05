@@ -6,16 +6,15 @@ import FooterModule from "./FooterModule";
 import CartModule from "./CartModule";
 import { CartIcon, Text } from "@/components";
 import { useRecoilState, useRecoilValue } from "recoil";
-import { bannerMessage, cartItems } from "@/state/atom";
+import { bannerMessage, cartItems, orderSummary } from "@/state/atom";
 
 interface LayoutModuleProps {
   children: ReactNode;
 }
 
 const LayoutModule: React.FC<LayoutModuleProps> = ({ children }) => {
-  const [showCart, setShowCart] = useState(false);
   const [cartTotal, setCartTotal] = useState<number>(0);
-
+  const [showSummary, setShowSummary] = useRecoilState(orderSummary)
   const [banner, setBanner] = useRecoilState(bannerMessage);
   const cart = useRecoilValue(cartItems);
 
@@ -26,18 +25,6 @@ const LayoutModule: React.FC<LayoutModuleProps> = ({ children }) => {
   return (
     <Box position={"relative"}>
       <HeaderModule />
-      {/* <Box
-        sx={{
-          color: "#FFF",
-          position: "fixed",
-          p: 2,
-          zIndex: 2,
-          background: "rgba(0,0,0, 0.8)",
-          display: !!banner.message ? "block" : "none",
-        }}
-      >
-        <Text variant="body1" text={`${banner.message}`} />
-      </Box> */}
       {children}
       <Box
         sx={{
@@ -52,7 +39,7 @@ const LayoutModule: React.FC<LayoutModuleProps> = ({ children }) => {
             mt: -0.5,
           },
         }}
-        onClick={() => setShowCart(true)}
+        onClick={() => setShowSummary(true)}
       >
         {cartTotal > 0 && (
           <Box
@@ -75,7 +62,7 @@ const LayoutModule: React.FC<LayoutModuleProps> = ({ children }) => {
           <CartIcon size={"24px"} />
         </Box>
       </Box>
-      {showCart && <CartModule {...{ setShowCart }} />}
+      {showSummary && <CartModule setShowCart={setShowSummary} />}
       <FooterModule />
     </Box>
   );
