@@ -101,12 +101,16 @@ const CardListing: React.FC<CardListingProps> = ({ item }) => {
                 onClick={handleClick}
                 sx={{
                   border: "1px solid #bf9b30",
+                  color: "#bf9b30",
                   cursor: "pointer",
                   my: "auto",
                   textAlign: "center",
                   py: 2,
                   position: "relative",
                   width: "100%",
+                  "&:hover": {
+                    color: "#333 !important",
+                  }, 
                   "&:after": {
                     content: '""',
                     position: "absolute",
@@ -128,8 +132,7 @@ const CardListing: React.FC<CardListingProps> = ({ item }) => {
               >
                 <Text
                   sx={{
-                    color: "#bf9b30",
-                    fontSize: "12px",
+                    fontSize: "14px",
                     fontWeight: "500",
                     my: "auto",
                   }}
@@ -148,6 +151,9 @@ const CardListing: React.FC<CardListingProps> = ({ item }) => {
                   py: 2,
                   position: "relative",
                   width: "100%",
+                  "&:hover": {
+                    color: "#333",
+                  }, 
                   "&:after": {
                     content: '""',
                     position: "absolute",
@@ -162,6 +168,7 @@ const CardListing: React.FC<CardListingProps> = ({ item }) => {
                     transition: "transform 0.3s",
                   },
                   "&:hover::after": {
+                    color: "#333",
                     transform: "scaleY(1)",
                     boxShadow: "1px 1px 10px #FFF",
                   },
@@ -173,7 +180,7 @@ const CardListing: React.FC<CardListingProps> = ({ item }) => {
                   href={`/detail?id=${item.id}`}
                 >
                   <Text
-                    sx={{ fontSize: "12px", fontWeight: "500", my: "auto" }}
+                    sx={{ fontSize: "14px", fontWeight: "500", my: "auto" }}
                     variant="body1"
                     text="More detail"
                   />

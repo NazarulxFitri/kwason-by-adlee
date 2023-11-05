@@ -26,6 +26,7 @@ const CartModule: React.FC<CartModuleProps> = ({ setShowCart }) => {
     setCart(temp);
   }
 
+
   return (
     <Box
       className={`animate__animated animate__fadeInRight`}
@@ -52,41 +53,47 @@ const CartModule: React.FC<CartModuleProps> = ({ setShowCart }) => {
         </Box>
       </Box>
       <Box mt={2}>
-        {cart?.map((i, idx) => (
-          <Box
-            key={idx}
-            sx={{
-              display: "flex",
-              justifyContent: "space-between",
-              borderBottom: "1px solid #D9D9D9",
-              py: 2,
-            }}
-          >
-            <Box display="flex">
-              <Box
-                sx={{ my: "auto", mr: 1, cursor: "pointer" }}
-                onClick={() => handleRemove(idx)}
-              >
-                <MinusIcon size={"16px"} color={"#B33A3A"} />
-              </Box>
-              <Text sx={{ fontWeight: "300" }} variant="body1" text={i.name} />
-            </Box>
-            <Box display="flex">
-              <Box sx={{ my: "auto", mr: 1, cursor: "pointer" }}>
+        {cart?.map((i, idx) => {
+          return (
+            <Box
+              key={idx}
+              sx={{
+                display: "flex",
+                justifyContent: "space-between",
+                borderBottom: "1px solid #D9D9D9",
+                py: 2,
+              }}
+            >
+              <Box display="flex">
+                <Box
+                  sx={{ my: "auto", mr: 1, cursor: "pointer" }}
+                  onClick={() => handleRemove(idx)}
+                >
+                  <MinusIcon size={"16px"} color={"#B33A3A"} />
+                </Box>
                 <Text
                   sx={{ fontWeight: "300" }}
                   variant="body1"
-                  text={`${i.qty} x `}
+                  text={i.name}
                 />
               </Box>
-              <Text
-                sx={{ fontWeight: "300" }}
-                variant="body1"
-                text={`RM${i.price}`}
-              />
+              <Box display="flex">
+                <Box sx={{ my: "auto", mr: 1, cursor: "pointer" }}>
+                  <Text
+                    sx={{ fontWeight: "300" }}
+                    variant="body1"
+                    text={`x `}
+                  />
+                </Box>
+                <Text
+                  sx={{ fontWeight: "300" }}
+                  variant="body1"
+                  text={`RM${i.price}`}
+                />
+              </Box>
             </Box>
-          </Box>
-        ))}
+          );
+        })}
       </Box>
       <Box mt={4}>
         <Box textAlign="right">

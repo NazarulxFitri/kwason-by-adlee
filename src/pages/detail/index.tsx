@@ -23,35 +23,15 @@ const Detail = () => {
   const [qty, setQty] = useState(1);
   const [cart, setCart] = useRecoilState(cartItems);
   const [showSummary, setShowSummary] = useRecoilState(orderSummary);
+  const [buttonText, setButtonText] = useState("Add to cart");
 
   function handleClick() {
-    let temp = [];
-    const sameItem = !!cart?.find((x) => x.name === item?.name);
-    const sameItemIdx = cart?.findIndex((x) => x.name === item?.name);
-
-    if (sameItem) {
-      for (let i = 0; i < cart.length; i++) {
-
-        if (i === sameItemIdx) {
-          temp.push({
-            name: item?.name,
-            price: item?.price,
-            qty: 10
-          })
-        }
-        else {
-          temp.push(cart[i]);
-        }
-      }
-      setCart(temp);
-      return;
+    const newItem = { name: item?.name, price: item?.price };
+    for (let i = 0; i < qty; i++) {
+      setCart((existedArray) => [...existedArray, newItem]);
     }
-
-    const newItem = { name: item?.name, price: item?.price, qty: qty };
-
-    setCart((existedArray) => [...existedArray, newItem]);
-
     setShowSummary(true);
+    setButtonText("Item addded");
   }
 
   return (
@@ -96,7 +76,7 @@ const Detail = () => {
             />
           </Box>
           <Grid container mt={4} gap={2}>
-            <Grid item md={12}>
+            <Grid item xs={12}>
               <Box>
                 <TextField
                   value={qty}
@@ -122,7 +102,7 @@ const Detail = () => {
                 />
               </Box>
             </Grid>
-            <Grid item md={12}>
+            <Grid item xs={12}>
               <Box
                 className={`animate__animated animate__headShake`}
                 sx={{
@@ -152,11 +132,15 @@ const Detail = () => {
                   },
                 }}
                 onClick={handleClick}
+                onMouseLeave={() => {
+                  setButtonText("Add to cart");
+                  setQty(1);
+                }}
               >
                 <Text
                   sx={{ fontWeight: "500" }}
                   variant="body1"
-                  text={"buttonText"}
+                  text={buttonText}
                 />
               </Box>
             </Grid>
