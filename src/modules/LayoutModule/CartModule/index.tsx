@@ -2,6 +2,7 @@
 import { CloseIcon, MinusIcon, Text } from "@/components";
 import { cartItems } from "@/state/atom";
 import { Box } from "@mui/material";
+import { useEffect } from "react";
 import { useRecoilState } from "recoil";
 
 interface CartModuleProps {
@@ -25,7 +26,6 @@ const CartModule: React.FC<CartModuleProps> = ({ setShowCart }) => {
     }
     setCart(temp);
   }
-
 
   return (
     <Box
@@ -78,13 +78,6 @@ const CartModule: React.FC<CartModuleProps> = ({ setShowCart }) => {
                 />
               </Box>
               <Box display="flex">
-                <Box sx={{ my: "auto", mr: 1, cursor: "pointer" }}>
-                  <Text
-                    sx={{ fontWeight: "300" }}
-                    variant="body1"
-                    text={`x `}
-                  />
-                </Box>
                 <Text
                   sx={{ fontWeight: "300" }}
                   variant="body1"
@@ -95,7 +88,7 @@ const CartModule: React.FC<CartModuleProps> = ({ setShowCart }) => {
           );
         })}
       </Box>
-      <Box mt={4}>
+      <Box my={4}>
         <Box textAlign="right">
           <Text
             variant="body1"
@@ -103,7 +96,34 @@ const CartModule: React.FC<CartModuleProps> = ({ setShowCart }) => {
             text={`Subtotal : <b>RM${totalAmount}</b>`}
           />
         </Box>
-        <Box mt={4} sx={{ border: "1px solid #D8D8D8", p: 2 }}>
+        <Box
+          mt={4}
+          sx={{
+            border: "1px solid #bf9b30",
+            cursor: "pointer",
+            textAlign: "center",
+            py: 2,
+            position: "relative",
+            width: "100%",
+            "&:after": {
+              content: '""',
+              position: "absolute",
+              bottom: "0",
+              left: "0",
+              width: "100%",
+              height: "100%",
+              transform: "scaleY(0)",
+              transformOrigin: "bottom center",
+              background: "#bf9b30",
+              zIndex: "-1",
+              transition: "transform 0.3s",
+            },
+            "&:hover::after": {
+              transform: "scaleY(1)",
+              boxShadow: "1px 1px 10px #bf9b30",
+            },
+          }}
+        >
           <Text
             variant="body1"
             sx={{ fontWeight: "300", textAlign: "center" }}

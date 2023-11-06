@@ -31,7 +31,7 @@ const Detail = () => {
       setCart((existedArray) => [...existedArray, newItem]);
     }
     setShowSummary(true);
-    setButtonText("Item addded");
+    setButtonText("Item added");
   }
 
   return (
@@ -104,7 +104,6 @@ const Detail = () => {
             </Grid>
             <Grid item xs={12}>
               <Box
-                className={`animate__animated animate__headShake`}
                 sx={{
                   border: "1px solid #bf9b30",
                   cursor: "pointer",
@@ -138,6 +137,8 @@ const Detail = () => {
                 }}
               >
                 <Text
+                  key={buttonText}
+                  className={`animate__animated animate__headShake`}
                   sx={{ fontWeight: "500" }}
                   variant="body1"
                   text={buttonText}
