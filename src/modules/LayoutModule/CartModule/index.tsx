@@ -2,6 +2,7 @@
 import { CloseIcon, MinusIcon, Text } from "@/components";
 import { cartItems } from "@/state/atom";
 import { Box } from "@mui/material";
+import Link from "next/link";
 import { useEffect } from "react";
 import { useRecoilState } from "recoil";
 
@@ -26,6 +27,13 @@ const CartModule: React.FC<CartModuleProps> = ({ setShowCart }) => {
     }
     setCart(temp);
   }
+
+  const itemListings = cart
+    ?.map((i, idx) => {
+      return `${idx + 1}) ${i.name}`;
+    })
+    .join("%0a")
+    .replaceAll(" ", "%20");
 
   return (
     <Box
@@ -124,11 +132,15 @@ const CartModule: React.FC<CartModuleProps> = ({ setShowCart }) => {
             },
           }}
         >
-          <Text
-            variant="body1"
-            sx={{ fontWeight: "300", textAlign: "center" }}
-            text={`Proceed`}
-          />
+          <Link
+            href={`https://wa.me/1156271776?text=Hi%20Kwason-By-Adlee,%20here%20is%20my%20order%0a%0a${itemListings}`}
+          >
+            <Text
+              variant="body1"
+              sx={{ fontWeight: "300", textAlign: "center" }}
+              text={`Proceed`}
+            />
+          </Link>
         </Box>
         <Text
           mt={1}
