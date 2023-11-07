@@ -133,7 +133,7 @@ const CartModule: React.FC<CartModuleProps> = ({ setShowCart }) => {
           }}
         >
           <Link
-            href={`https://wa.me/1156271776?text=Hi%20Kwason-By-Adlee,%20here%20is%20my%20order%0a%0a${itemListings}`}
+            href={`https://wa.me/176324921?text=Hi%20Kwason-By-Adlee,%20here%20is%20my%20order%0a%0a${itemListings}`}
           >
             <Text
               variant="body1"
