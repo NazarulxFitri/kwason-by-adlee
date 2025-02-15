@@ -40,7 +40,7 @@ const ListingModule: React.FC<ListingModuleProps> = () => {
 
       <Grid container spacing={2} mt={2}>
         {items?.map((i, idx) => (
-          <Grid key={idx} item xs={12} sm={6} md={4}>
+          <Grid key={idx} item xs={6} sm={6} md={4}>
             <CardListing item={i} />
           </Grid>
         ))}

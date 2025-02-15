@@ -2,7 +2,7 @@ export const useGetItemListings = () => {
   const data = [
     {
       id: "box-4-nutty-kwason",
-      url: `/media/banner-1.jpeg`,
+      url: `/media/twin-chocolate-hazelnut.jpeg`,
       alt: "Kwason By Adlee",
       price: 10.90,
       name: "Twin Choco Hazelnut",
@@ -11,7 +11,7 @@ export const useGetItemListings = () => {
     },
     {
       id: "signature-kwason-by-adlee",
-      url: `/media/banner-2.jpeg`,
+      url: `/media/red-velvet.jpeg`,
       alt: "Kwason By Adlee",
       price: 10.90,
       name: "Red Velvet Cheese Cake",
@@ -20,7 +20,7 @@ export const useGetItemListings = () => {
     },
     {
       id: "mix-box-platter",
-      url: `/media/banner-3.jpeg`,
+      url: `/media/matcha.jpeg`,
       alt: "Kwason By Adlee",
       price: 8.80,
       name: "Uji Matcha Zie",
@@ -29,7 +29,7 @@ export const useGetItemListings = () => {
     },
     {
       id: "choco-kwason",
-      url: `/media/banner-4.jpeg`,
+      url: `/media/lotus-biscoff.jpeg`,
       alt: "Kwason By Adlee",
       price: 8.80,
       name: "Lotus Biscoff",
@@ -38,7 +38,7 @@ export const useGetItemListings = () => {
     },
     {
       id: "vanila-cold-dough",
-      url: `/media/banner-5.jpeg`,
+      url: `/media/macademia.jpeg`,
       alt: "Kwason By Adlee",
       price: 8.80,
       name: "Macademia White Chocolate",
@@ -47,7 +47,7 @@ export const useGetItemListings = () => {
     },
     {
       id: "mini-kwason",
-      url: `/media/banner-6.jpeg`,
+      url: `/media/monster.jpeg`,
       alt: "Kwason By Adlee",
       price: 10.90,
       name: "Monster Ozzie",
@@ -56,7 +56,7 @@ export const useGetItemListings = () => {
     },
     {
       id: "mini-kwason",
-      url: `/media/banner-6.jpeg`,
+      url: `/media/signature.jpeg`,
       alt: "Kwason By Adlee",
       price: 8.00,
       name: "Signature Ozzie / Original",
@@ -65,7 +65,7 @@ export const useGetItemListings = () => {
     },
     {
       id: "mini-kwason",
-      url: `/media/banner-6.jpeg`,
+      url: `/media/smores.jpeg`,
       alt: "Kwason By Adlee",
       price: 8.80,
       name: "Smores",
