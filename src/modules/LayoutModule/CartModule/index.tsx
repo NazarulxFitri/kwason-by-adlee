@@ -107,7 +107,7 @@ const CartModule: React.FC<CartModuleProps> = ({ setShowCart }) => {
         <Box
           mt={4}
           sx={{
-            border: "1px solid #bf9b30",
+            border: "1px solid pink",
             cursor: "pointer",
             textAlign: "center",
             py: 2,
@@ -122,13 +122,13 @@ const CartModule: React.FC<CartModuleProps> = ({ setShowCart }) => {
               height: "100%",
               transform: "scaleY(0)",
               transformOrigin: "bottom center",
-              background: "#bf9b30",
+              background: "pink",
               zIndex: "-1",
               transition: "transform 0.3s",
             },
             "&:hover::after": {
               transform: "scaleY(1)",
-              boxShadow: "1px 1px 10px #bf9b30",
+              boxShadow: "1px 1px 10px pink",
             },
           }}
         >

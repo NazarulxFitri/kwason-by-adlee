@@ -49,7 +49,7 @@ const LayoutModule: React.FC<LayoutModuleProps> = ({ children }) => {
             <Text
               variant="body1"
               sx={{
-                color: "#bf9b30",
+                color: "pink",
                 fontWeight: "500",
                 fontSize: "16px",
                 textAlign: "right",

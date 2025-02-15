@@ -20,7 +20,7 @@ const Logo: React.FC<LogoProps> = () => {
     >
       <Text
         sx={{
-          color: "#bf9b30",
+          color: "pink",
           fontSize: "48px",
           fontFamily:
             `${nothingYouCouldDo.style.fontFamily} !important` || "auto",

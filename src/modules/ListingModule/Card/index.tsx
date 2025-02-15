@@ -100,8 +100,8 @@ const CardListing: React.FC<CardListingProps> = ({ item }) => {
               <Box
                 onClick={handleClick}
                 sx={{
-                  border: "1px solid #bf9b30",
-                  color: "#bf9b30",
+                  border: "1px solid pink",
+                  color: "pink",
                   cursor: "pointer",
                   my: "auto",
                   textAlign: "center",
@@ -120,13 +120,13 @@ const CardListing: React.FC<CardListingProps> = ({ item }) => {
                     height: "100%",
                     transform: "scaleY(0)",
                     transformOrigin: "bottom center",
-                    background: "#bf9b30",
+                    background: "pink",
                     zIndex: "-1",
                     transition: "transform 0.3s",
                   },
                   "&:hover::after": {
                     transform: "scaleY(1)",
-                    boxShadow: "1px 1px 10px #bf9b30",
+                    boxShadow: "1px 1px 10px pink",
                   },
                 }}
               >

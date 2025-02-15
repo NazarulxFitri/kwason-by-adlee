@@ -88,14 +88,14 @@ const Detail = () => {
                   sx={{
                     width: "80px",
                     "& .MuiInputLabel-root.Mui-focused": {
-                      color: "#BF9B30",
+                      color: "pink",
                     },
                     "& .MuiOutlinedInput-root": {
                       borderRadius: "0",
                     },
                     "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline":
                       {
-                        borderColor: "#BF9B30",
+                        borderColor: "pink",
                       },
                   }}
                   onChange={(e) => setQty(+e.currentTarget.value)}
@@ -105,7 +105,7 @@ const Detail = () => {
             <Grid item xs={12}>
               <Box
                 sx={{
-                  border: "1px solid #bf9b30",
+                  border: "1px solid pink",
                   cursor: "pointer",
                   my: "auto",
                   textAlign: "center",
@@ -121,13 +121,13 @@ const Detail = () => {
                     height: "100%",
                     transform: "scaleY(0)",
                     transformOrigin: "bottom center",
-                    background: "#bf9b30",
+                    background: "pink",
                     zIndex: "-1",
                     transition: "transform 0.3s",
                   },
                   "&:hover::after": {
                     transform: "scaleY(1)",
-                    boxShadow: "1px 1px 10px #bf9b30",
+                    boxShadow: "1px 1px 10px pink",
                   },
                 }}
                 onClick={handleClick}
