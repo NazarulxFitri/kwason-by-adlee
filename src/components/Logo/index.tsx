@@ -26,11 +26,11 @@ const Logo: React.FC<LogoProps> = () => {
             `${nothingYouCouldDo.style.fontFamily} !important` || "auto",
         }}
         className={nothingYouCouldDo.className}
-        text={`Kwason`}
+        text={`Ozzie Cookies`}
       />
       <Text
         sx={{ fontSize: "16px", fontWeight: "300", mt: -2 }}
-        text={`By Adlee ©`}
+        text={`By Zati`}
       />
     </Box>
   );
