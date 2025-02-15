@@ -25,7 +25,7 @@ const nothingYouCouldDo = Nothing_You_Could_Do({
 });
 
 const CardListing: React.FC<CardListingProps> = ({ item }) => {
-  const [showDetail, setShowDetail] = useState(false);
+  const [showDetail, setShowDetail] = useState(true);
   const [cart, setCart] = useRecoilState(cartItems);
   const [banner, setBanner] = useRecoilState(bannerMessage);
   const [showSummary, setShowSummary] = useRecoilState(orderSummary);
@@ -49,12 +49,12 @@ const CardListing: React.FC<CardListingProps> = ({ item }) => {
           mt: -1,
         },
       }}
-      onMouseOver={() => {
-        setShowDetail(true);
-      }}
-      onMouseLeave={() => {
-        setShowDetail(false);
-      }}
+      // onMouseOver={() => {
+      //   setShowDetail(true);
+      // }}
+      // onMouseLeave={() => {
+      //   setShowDetail(false);
+      // }}
     >
       <Image
         src={item.url}

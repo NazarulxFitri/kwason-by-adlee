@@ -101,7 +101,7 @@ const CartModule: React.FC<CartModuleProps> = ({ setShowCart }) => {
           <Text
             variant="body1"
             sx={{ fontWeight: "300", fontSize: "20px" }}
-            text={`Subtotal : <b>RM${totalAmount}</b>`}
+            text={`Subtotal : <b>RM${totalAmount.toFixed(2)}</b>`}
           />
         </Box>
         <Box
