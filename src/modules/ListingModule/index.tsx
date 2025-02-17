@@ -16,28 +16,6 @@ const ListingModule: React.FC<ListingModuleProps> = () => {
 
   return (
     <Box mt={8} className={`animate__animated animate__fadeInUp`}>
-      <Text
-        sx={{
-          fontSize: "48px",
-          textAlign: "center",
-          fontFamily:
-            `${nothingYouCouldDo.style.fontFamily} !important` || "auto",
-        }}
-        className={nothingYouCouldDo?.className}
-        text={`Our Menu`}
-      />
-      <Text
-        sx={{
-          color: "pink",
-          fontSize: "16px",
-          fontWeight: "300",
-          mx: "auto",
-          maxWidth: "400px",
-          textAlign: "center",
-        }}
-        text={`Presenting our own home-made Kwason. Baked with love and sincerety just to deliver the taste of original Kwason to your door. `}
-      />
-
       <Grid container spacing={2} mt={2}>
         {items?.map((i, idx) => (
           <Grid key={idx} item xs={12} sm={6} md={4}>

@@ -28,10 +28,6 @@ const Logo: React.FC<LogoProps> = () => {
         className={nothingYouCouldDo.className}
         text={`Ozzie Cookies`}
       />
-      <Text
-        sx={{ fontSize: "16px", fontWeight: "300", mt: -2 }}
-        text={`By Zati`}
-      />
     </Box>
   );
 };

@@ -17,27 +17,27 @@ export default function Home() {
   const bannerItems = [
     {
       url: `/media/banner-1.jpeg`,
-      alt: "Kwason By Adlee",
+      alt: "theozziecookies",
     },
     {
       url: `/media/banner-2.jpeg`,
-      alt: "Kwason By Adlee",
+      alt: "theozziecookies",
     },
     {
       url: `/media/banner-3.jpeg`,
-      alt: "Kwason By Adlee",
+      alt: "theozziecookies",
     },
     {
       url: `/media/banner-4.jpeg`,
-      alt: "Kwason By Adlee",
+      alt: "theozziecookies",
     },
     {
       url: `/media/banner-5.jpeg`,
-      alt: "Kwason By Adlee",
+      alt: "theozziecookies",
     },
     {
       url: `/media/banner-6.jpeg`,
-      alt: "Kwason By Adlee",
+      alt: "theozziecookies",
     },
   ];
   return (

@@ -3,43 +3,43 @@ export const useGetItemListings = () => {
     {
       id: "box-4-nutty-kwason",
       url: `/media/twin-chocolate-hazelnut.jpeg`,
-      alt: "Kwason By Adlee",
+      alt: "theozziecookies",
       price: 10.90,
       name: "Twin Choco Hazelnut",
       description:
-        "Twin Choco Hazelnut",
+        "Double the Chocolate, Double the Indulgence! Rich Dark Chocolate & Hazelnut Stuffed Perfection!",
     },
     {
-      id: "signature-kwason-by-adlee",
+      id: "signature-theozziecookies",
       url: `/media/red-velvet.jpeg`,
-      alt: "Kwason By Adlee",
+      alt: "theozziecookies",
       price: 10.90,
       name: "Red Velvet Cheese Cake",
       description:
-        "Red Velvet Cheese Cake",
+        "Indulge in Luxury—Red Velvet Cookie Stuffed with White Chocolate & Cream Cheese",
     },
     {
       id: "mix-box-platter",
       url: `/media/matcha.jpeg`,
-      alt: "Kwason By Adlee",
+      alt: "theozziecookies",
       price: 8.80,
       name: "Uji Matcha Zie",
       description:
-        "Uji Matcha Zie",
+        "Matcha Meets White Chocolate—A Perfect Harmony of Flavor!",
     },
     {
       id: "choco-kwason",
       url: `/media/lotus-biscoff.jpeg`,
-      alt: "Kwason By Adlee",
+      alt: "theozziecookies",
       price: 8.80,
       name: "Lotus Biscoff",
       description:
-        "Lotus Biscoff",
+        "Stuffed with Lotus Biscoff & White Chocolate—A Cookie Dream Come True!",
     },
     {
       id: "vanila-cold-dough",
       url: `/media/macademia.jpeg`,
-      alt: "Kwason By Adlee",
+      alt: "theozziecookies",
       price: 8.80,
       name: "Macademia White Chocolate",
       description:
@@ -48,25 +48,25 @@ export const useGetItemListings = () => {
     {
       id: "mini-kwason",
       url: `/media/monster.jpeg`,
-      alt: "Kwason By Adlee",
+      alt: "theozziecookies",
       price: 10.90,
       name: "Monster Ozzie",
       description:
-        "Monster Ozzie",
+        "The Ultimate Cookie Mashup! Oreo × Chips Ahoy × White Chocolate x Milk Chocolate = Pure Bliss!",
     },
     {
       id: "mini-kwason",
       url: `/media/signature.jpeg`,
-      alt: "Kwason By Adlee",
+      alt: "theozziecookies",
       price: 8.00,
       name: "Signature Ozzie / Original",
       description:
-        "Signature Ozzie / Original",
+        "Soft, Chewy, and Loaded with Dark Chocolate Chips. A Timeless Classic in Every Bite, Just Like Grandma Used to Make!",
     },
     {
       id: "mini-kwason",
       url: `/media/smores.jpeg`,
-      alt: "Kwason By Adlee",
+      alt: "theozziecookies",
       price: 8.80,
       name: "Smores",
       description:

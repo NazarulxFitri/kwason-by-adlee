@@ -16,7 +16,7 @@ const FooterModule = () => {
           </Box>
           <Box>
             <Link href="/#todo">
-              <Text fontWeight={300} variant="body1" text={`@kwason-by-adle`} />
+              <Text fontWeight={300} variant="body1" text={`@theozziecookies`} />
             </Link>
           </Box>
         </Box>
@@ -25,7 +25,7 @@ const FooterModule = () => {
         <Text
           variant="body1"
           sx={{ fontSize: "12px", fontWeight: "300" }}
-          text="Copyright © 2023 Kwason By Adlee . All rights reserved"
+          text="Copyright © 2024 theozziecookies . All rights reserved"
         />
       </Box>
     </Box>
