@@ -1,7 +1,7 @@
 export const useGetItemListings = () => {
   const data = [
     {
-      id: "box-4-nutty-kwason",
+      id: "twin-choco-hazelnut",
       url: `/media/twin-chocolate-hazelnut.jpeg`,
       alt: "theozziecookies",
       price: 10.90,
@@ -10,7 +10,7 @@ export const useGetItemListings = () => {
         "Double the Chocolate, Double the Indulgence! Rich Dark Chocolate & Hazelnut Stuffed Perfection!",
     },
     {
-      id: "signature-theozziecookies",
+      id: "red-velvet-cheese-cake",
       url: `/media/red-velvet.jpeg`,
       alt: "theozziecookies",
       price: 10.90,
@@ -19,7 +19,7 @@ export const useGetItemListings = () => {
         "Indulge in Luxury—Red Velvet Cookie Stuffed with White Chocolate & Cream Cheese",
     },
     {
-      id: "mix-box-platter",
+      id: "uji-matcha-zie",
       url: `/media/matcha.jpeg`,
       alt: "theozziecookies",
       price: 8.80,
@@ -28,7 +28,7 @@ export const useGetItemListings = () => {
         "Matcha Meets White Chocolate—A Perfect Harmony of Flavor!",
     },
     {
-      id: "choco-kwason",
+      id: "lotus-biscoff",
       url: `/media/lotus-biscoff.jpeg`,
       alt: "theozziecookies",
       price: 8.80,
@@ -37,7 +37,7 @@ export const useGetItemListings = () => {
         "Stuffed with Lotus Biscoff & White Chocolate—A Cookie Dream Come True!",
     },
     {
-      id: "vanila-cold-dough",
+      id: "macademia-white-chocolate",
       url: `/media/macademia.jpeg`,
       alt: "theozziecookies",
       price: 8.80,
@@ -46,7 +46,7 @@ export const useGetItemListings = () => {
         "Macademia White Chocolate",
     },
     {
-      id: "mini-kwason",
+      id: "monster-cookie",
       url: `/media/monster.jpeg`,
       alt: "theozziecookies",
       price: 10.90,
@@ -55,7 +55,7 @@ export const useGetItemListings = () => {
         "The Ultimate Cookie Mashup! Oreo × Chips Ahoy × White Chocolate x Milk Chocolate = Pure Bliss!",
     },
     {
-      id: "mini-kwason",
+      id: "signature-ozzie",
       url: `/media/signature.jpeg`,
       alt: "theozziecookies",
       price: 8.00,
@@ -64,13 +64,13 @@ export const useGetItemListings = () => {
         "Soft, Chewy, and Loaded with Dark Chocolate Chips. A Timeless Classic in Every Bite, Just Like Grandma Used to Make!",
     },
     {
-      id: "mini-kwason",
+      id: "campfire-smores",
       url: `/media/smores.jpeg`,
       alt: "theozziecookies",
       price: 8.80,
-      name: "Smores",
+      name: "Campfire Smores",
       description:
-        "Smores",
+        "Classic Cookie with dark cholocate chip + Marshmallow on top",
     },
   ];
 
