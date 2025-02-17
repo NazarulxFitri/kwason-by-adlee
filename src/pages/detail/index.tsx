@@ -75,7 +75,7 @@ const Detail = () => {
               text={`${item?.description}`}
             />
           </Box>
-          <Grid container mt={4} gap={2}>
+          <Grid container mt={4} spacing={2}>
             <Grid item xs={12}>
               <Box>
                 <TextField
@@ -102,7 +102,7 @@ const Detail = () => {
                 />
               </Box>
             </Grid>
-            <Grid item xs={12}>
+            <Grid item xs={12} md={8}>
               <Box
                 sx={{
                   border: "1px solid pink",
@@ -143,6 +143,46 @@ const Detail = () => {
                   variant="body1"
                   text={buttonText}
                 />
+              </Box>
+            </Grid>
+            <Grid item xs={12} md={4}>
+              <Box
+                sx={{
+                  border: "1px solid beige",
+                  cursor: "pointer",
+                  my: "auto",
+                  textAlign: "center",
+                  py: 2,
+                  position: "relative",
+                  width: "100%",
+                  "&:after": {
+                    content: '""',
+                    position: "absolute",
+                    bottom: "0",
+                    left: "0",
+                    width: "100%",
+                    height: "100%",
+                    transform: "scaleY(0)",
+                    transformOrigin: "bottom center",
+                    background: "beige",
+                    zIndex: "-1",
+                    transition: "transform 0.3s",
+                  },
+                  "&:hover::after": {
+                    transform: "scaleY(1)",
+                    boxShadow: "1px 1px 10px pink",
+                  },
+                }}
+              >
+                <Link href="/">
+                  <Text
+                    key={"Go Back to Catalogue"}
+                    className={`animate__animated animate__headShake`}
+                    sx={{ fontWeight: "500" }}
+                    variant="body1"
+                    text={"Back to Catalogue"}
+                  />
+                </Link>
               </Box>
             </Grid>
           </Grid>
