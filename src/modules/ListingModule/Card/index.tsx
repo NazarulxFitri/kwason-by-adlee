@@ -31,7 +31,7 @@ const CardListing: React.FC<CardListingProps> = ({ item }) => {
   const [showSummary, setShowSummary] = useRecoilState(orderSummary);
 
   function handleClick() {
-    const newItem = { name: item?.name, price: item?.price };
+    const newItem = { name: item?.name, price: item?.price }; 
     setCart((existedArray) => [...existedArray, newItem]);
     setBanner({
       message: `You have successfully added <b>${item?.name}</b> into your cart`,
@@ -49,13 +49,19 @@ const CardListing: React.FC<CardListingProps> = ({ item }) => {
           mt: -1,
         },
       }}
-      // onMouseOver={() => {
-      //   setShowDetail(true);
-      // }}
-      // onMouseLeave={() => {
-      //   setShowDetail(false);
-      // }}
     >
+      {item.stock < 1 &&
+        <Box>
+          <Box sx={{ background: "#EFEFEF", opacity: "0.6", cursor: "pointer", height: "100%", width: "100%", position: "absolute", zIndex: 2 }} />
+          <Box sx={{ background: "pink", opacity: "1", cursor: "pointer", position: "absolute", zIndex: 3, top: "0", right: "0", px: 2, py: 1  }}>
+            <Text
+                sx={{ fontSize: "16px", fontWeight: "300" }}
+                text={`Out of Stock`}
+              />
+          </Box>
+        </Box>
+}
+
       <Image
         src={item.url}
         alt={item.alt}
@@ -110,7 +116,7 @@ const CardListing: React.FC<CardListingProps> = ({ item }) => {
                   width: "100%",
                   "&:hover": {
                     color: "#333 !important",
-                  }, 
+                  },
                   "&:after": {
                     content: '""',
                     position: "absolute",
@@ -153,7 +159,7 @@ const CardListing: React.FC<CardListingProps> = ({ item }) => {
                   width: "100%",
                   "&:hover": {
                     color: "#333",
-                  }, 
+                  },
                   "&:after": {
                     content: '""',
                     position: "absolute",
