@@ -8,7 +8,7 @@ export const useGetItemListings = () => {
       name: "Twin Choco Hazelnut",
       description:
         "Double the Chocolate, Double the Indulgence! Rich Dark Chocolate & Hazelnut Stuffed Perfection!",
-      stock: 1,
+      stock: 0,
     },
     {
       id: "red-velvet-cheese-cake",
@@ -18,7 +18,7 @@ export const useGetItemListings = () => {
       name: "Red Velvet Cheese Cake",
       description:
         "Indulge in Luxury—Red Velvet Cookie Stuffed with White Chocolate & Cream Cheese",
-      stock: 1,
+      stock: 0,
     },
     {
       id: "uji-matcha-zie",
