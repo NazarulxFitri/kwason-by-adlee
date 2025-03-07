@@ -8,7 +8,7 @@ export const useGetItemListings = () => {
       name: "Twin Choco Hazelnut",
       description:
         "Double the Chocolate, Double the Indulgence! Rich Dark Chocolate & Hazelnut Stuffed Perfection!",
-      stock: 0,
+      stock: 1,
     },
     {
       id: "red-velvet-cheese-cake",
@@ -48,7 +48,7 @@ export const useGetItemListings = () => {
       name: "Macademia White Chocolate",
       description:
         "Macademia White Chocolate",
-      stock: 0,
+      stock: 1,
     },
     {
       id: "monster-cookie",
@@ -58,7 +58,7 @@ export const useGetItemListings = () => {
       name: "Monster Ozzie",
       description:
         "The Ultimate Cookie Mashup! Oreo × Chips Ahoy × White Chocolate x Milk Chocolate = Pure Bliss!",
-      stock: 0,
+      stock: 1,
     },
     {
       id: "signature-ozzie",
@@ -68,7 +68,7 @@ export const useGetItemListings = () => {
       name: "Signature Ozzie / Original",
       description:
         "Soft, Chewy, and Loaded with Dark Chocolate Chips. A Timeless Classic in Every Bite, Just Like Grandma Used to Make!",
-      stock: 0,
+      stock: 1,
     },
     {
       id: "campfire-smores",
@@ -78,7 +78,7 @@ export const useGetItemListings = () => {
       name: "Campfire Smores",
       description:
         "Classic Cookie with dark cholocate chip + Marshmallow on top",
-      stock: 0,
+      stock: 1,
     },
   ];
 

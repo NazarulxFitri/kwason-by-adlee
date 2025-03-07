@@ -1,9 +1,9 @@
 // @ts-nocheck
 import { CloseIcon, MinusIcon, Text } from "@/components";
 import { cartItems } from "@/state/atom";
-import { Box } from "@mui/material";
+import { Box, TextField } from "@mui/material";
 import Link from "next/link";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
 
 interface CartModuleProps {
@@ -12,11 +12,12 @@ interface CartModuleProps {
 
 const CartModule: React.FC<CartModuleProps> = ({ setShowCart }) => {
   const [cart, setCart] = useRecoilState(cartItems);
+  const [totalCustomerPay, setTotalCustomerPay] = useState(0);
 
   let totalAmount = 0;
   for (let i = 0; i < cart.length; i++) {
     totalAmount += cart?.[i]?.price;
-  }
+  }  
 
   function handleRemove(id: number) {
     let temp = [];
@@ -96,7 +97,7 @@ const CartModule: React.FC<CartModuleProps> = ({ setShowCart }) => {
           );
         })}
       </Box>
-      <Box my={4}>
+      <Box mt={4}>
         <Box textAlign="right">
           <Text
             variant="body1"
@@ -104,7 +105,28 @@ const CartModule: React.FC<CartModuleProps> = ({ setShowCart }) => {
             text={`Subtotal : <b>RM${totalAmount.toFixed(2)}</b>`}
           />
         </Box>
-        <Box
+        <Box>
+
+          <Box mt={4} sx={{ borderTop: "1px solid pink", pt: 4 }}>
+            {console.log("xxx customerpay", totalCustomerPay)}
+            <TextField
+              InputLabelProps={{ shrink: true }}
+              type="number"
+              label="Total Customer Pay"
+              variant="outlined"
+              onChange={(e) => setTotalCustomerPay(e.target.value)}
+              fullWidth
+            />
+            <Box textAlign="right" mt={2}>
+              <Text
+                variant="body1"
+                sx={{ fontWeight: "300", fontSize: "20px" }}
+                text={`Balance : <b>RM${(totalCustomerPay - totalAmount).toFixed(2) }</b>`}
+              />
+            </Box>
+          </Box>
+        </Box>
+        {/* <Box
           mt={4}
           sx={{
             border: "1px solid pink",
@@ -141,13 +163,13 @@ const CartModule: React.FC<CartModuleProps> = ({ setShowCart }) => {
               text={`Proceed`}
             />
           </Link>
-        </Box>
-        <Text
+        </Box> */}
+        {/* <Text
           mt={1}
           variant="body1"
           sx={{ fontWeight: "300", fontSize: "12px" }}
           text={`By clicking proceed button, you will be navigated to Whatsapp for order confirmation`}
-        />
+        /> */}
       </Box>
     </Box>
   );
