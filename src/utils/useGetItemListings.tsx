@@ -44,7 +44,7 @@ export const useGetItemListings = () => {
       id: "macademia-white-chocolate",
       url: `/media/macademia.jpeg`,
       alt: "theozziecookies",
-      price: 9.80,
+      price: 10.90,
       name: "Macademia White Chocolate",
       description:
         "Macademia White Chocolate",

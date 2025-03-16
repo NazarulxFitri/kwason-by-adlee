@@ -17,7 +17,7 @@ const CartModule: React.FC<CartModuleProps> = ({ setShowCart }) => {
   let totalAmount = 0;
   for (let i = 0; i < cart.length; i++) {
     totalAmount += cart?.[i]?.price;
-  }  
+  }
 
   function handleRemove(id: number) {
     let temp = [];
@@ -107,8 +107,7 @@ const CartModule: React.FC<CartModuleProps> = ({ setShowCart }) => {
         </Box>
         <Box>
 
-          <Box mt={4} sx={{ borderTop: "1px solid pink", pt: 4 }}>
-            {console.log("xxx customerpay", totalCustomerPay)}
+          {/* <Box mt={4} sx={{ borderTop: "1px solid pink", pt: 4 }}>
             <TextField
               InputLabelProps={{ shrink: true }}
               type="number"
@@ -125,51 +124,52 @@ const CartModule: React.FC<CartModuleProps> = ({ setShowCart }) => {
               />
             </Box>
           </Box>
-        </Box>
-        {/* <Box
-          mt={4}
-          sx={{
-            border: "1px solid pink",
-            cursor: "pointer",
-            textAlign: "center",
-            py: 2,
-            position: "relative",
-            width: "100%",
-            "&:after": {
-              content: '""',
-              position: "absolute",
-              bottom: "0",
-              left: "0",
-              width: "100%",
-              height: "100%",
-              transform: "scaleY(0)",
-              transformOrigin: "bottom center",
-              background: "pink",
-              zIndex: "-1",
-              transition: "transform 0.3s",
-            },
-            "&:hover::after": {
-              transform: "scaleY(1)",
-              boxShadow: "1px 1px 10px pink",
-            },
-          }}
-        >
-          <Link
-            href={`https://wa.me/+601156271776?text=Hi%20theozziecookies,%20here%20is%20my%20order%0a%0a${itemListings}`}
-          >
-            <Text
-              variant="body1"
-              sx={{ fontWeight: "300", textAlign: "center" }}
-              text={`Proceed`}
-            />
-          </Link>
         </Box> */}
-        {/* <Text
-          mt={1}
-          variant="body1"
-          sx={{ fontWeight: "300", fontSize: "12px" }}
-          text={`By clicking proceed button, you will be navigated to Whatsapp for order confirmation`}
-        /> */}
+          <Box
+            mt={4}
+            sx={{
+              border: "1px solid pink",
+              cursor: "pointer",
+              textAlign: "center",
+              py: 2,
+              position: "relative",
+              width: "100%",
+              "&:after": {
+                content: '""',
+                position: "absolute",
+                bottom: "0",
+                left: "0",
+                width: "100%",
+                height: "100%",
+                transform: "scaleY(0)",
+                transformOrigin: "bottom center",
+                background: "pink",
+                zIndex: "-1",
+                transition: "transform 0.3s",
+              },
+              "&:hover::after": {
+                transform: "scaleY(1)",
+                boxShadow: "1px 1px 10px pink",
+              },
+            }}
+          >
+            <Link
+              href={`https://wa.me/+601156271776?text=Hi%20theozziecookies,%20here%20is%20my%20order%0a%0a${itemListings}`}
+            >
+              <Text
+                variant="body1"
+                sx={{ fontWeight: "300", textAlign: "center" }}
+                text={`Proceed`}
+              />
+            </Link>
+          </Box>
+          <Text
+            mt={1}
+            variant="body1"
+            sx={{ fontWeight: "300", fontSize: "12px" }}
+            text={`By clicking proceed button, you will be navigated to Whatsapp for order confirmation`}
+          />
+        </Box>
       </Box>
     </Box>
   );
