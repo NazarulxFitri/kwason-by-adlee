@@ -48,6 +48,7 @@ const CartModule: React.FC<CartModuleProps> = ({ setShowCart }) => {
         right: "0",
         top: "0",
         width: { xs: "100%", md: "440px" },
+        overflowY: "auto",
         zIndex: 1,
       }}
     >
@@ -107,7 +108,7 @@ const CartModule: React.FC<CartModuleProps> = ({ setShowCart }) => {
         </Box>
         <Box>
 
-          {/* <Box mt={4} sx={{ borderTop: "1px solid pink", pt: 4 }}>
+          <Box mt={4} sx={{ borderTop: "1px solid pink", pt: 4 }}>
             <TextField
               InputLabelProps={{ shrink: true }}
               type="number"
@@ -124,7 +125,7 @@ const CartModule: React.FC<CartModuleProps> = ({ setShowCart }) => {
               />
             </Box>
           </Box>
-        </Box> */}
+        
           <Box
             mt={4}
             sx={{
@@ -166,7 +167,13 @@ const CartModule: React.FC<CartModuleProps> = ({ setShowCart }) => {
           <Text
             mt={1}
             variant="body1"
-            sx={{ fontWeight: "300", fontSize: "12px" }}
+            sx={{ fontWeight: "300", color: "#666", fontSize: "12px" }}
+            text={`Note : For Online orders, above total is not including Delivery charge yet. Delivery charge will be determined based on distance between RM5 - RM10`}
+          />
+          <Text
+            mt={1}
+            variant="body1"
+            sx={{ fontWeight: "300", color: "#666", fontSize: "12px" }}
             text={`By clicking proceed button, you will be navigated to Whatsapp for order confirmation`}
           />
         </Box>
