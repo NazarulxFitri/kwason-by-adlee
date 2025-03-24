@@ -8,7 +8,7 @@ export const useGetItemListings = () => {
       name: "Twin Choco Hazelnut",
       description:
         "Double the Chocolate, Double the Indulgence! Rich Dark Chocolate & Hazelnut Stuffed Perfection!",
-      stock: 1,
+      stock: 0,
     },
     {
       id: "red-velvet-cheese-cake",
@@ -18,7 +18,7 @@ export const useGetItemListings = () => {
       name: "Red Velvet Cheese Cake",
       description:
         "Indulge in Luxury—Red Velvet Cookie Stuffed with White Chocolate & Cream Cheese",
-      stock: 1,
+      stock: 0,
     },
     {
       id: "uji-matcha-zie",
@@ -28,7 +28,7 @@ export const useGetItemListings = () => {
       name: "Uji Matcha Zie",
       description:
         "Matcha Meets White Chocolate—A Perfect Harmony of Flavor!",
-      stock: 1,
+      stock: 0,
     },
     {
       id: "lotus-biscoff",
@@ -38,7 +38,7 @@ export const useGetItemListings = () => {
       name: "Lotus Biscoff",
       description:
         "Stuffed with Lotus Biscoff & White Chocolate—A Cookie Dream Come True!",
-      stock: 1,
+      stock: 0,
     },
     {
       id: "macademia-white-chocolate",
@@ -48,7 +48,7 @@ export const useGetItemListings = () => {
       name: "Macademia White Chocolate",
       description:
         "Macademia White Chocolate",
-      stock: 1,
+      stock: 0,
     },
     {
       id: "monster-cookie",
@@ -58,7 +58,7 @@ export const useGetItemListings = () => {
       name: "Monster Ozzie",
       description:
         "The Ultimate Cookie Mashup! Oreo × Chips Ahoy × White Chocolate x Milk Chocolate = Pure Bliss!",
-      stock: 1,
+      stock: 0,
     },
     {
       id: "signature-ozzie",
@@ -68,7 +68,7 @@ export const useGetItemListings = () => {
       name: "Signature Ozzie / Original",
       description:
         "Soft, Chewy, and Loaded with Dark Chocolate Chips. A Timeless Classic in Every Bite, Just Like Grandma Used to Make!",
-      stock: 1,
+      stock: 0,
     },
     {
       id: "campfire-smores",
@@ -78,7 +78,7 @@ export const useGetItemListings = () => {
       name: "Campfire Smores",
       description:
         "Classic Cookie with dark cholocate chip + Marshmallow on top",
-      stock: 1,
+      stock: 0,
     },
   ];
 
