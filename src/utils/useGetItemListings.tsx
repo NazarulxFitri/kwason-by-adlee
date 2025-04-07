@@ -38,7 +38,7 @@ export const useGetItemListings = () => {
       name: "Lotus Biscoff",
       description:
         "Stuffed with Lotus Biscoff & White Chocolate—A Cookie Dream Come True!",
-      stock: 0,
+      stock: 1,
     },
     {
       id: "macademia-white-chocolate",
@@ -68,7 +68,7 @@ export const useGetItemListings = () => {
       name: "Signature Ozzie / Original",
       description:
         "Soft, Chewy, and Loaded with Dark Chocolate Chips. A Timeless Classic in Every Bite, Just Like Grandma Used to Make!",
-      stock: 0,
+      stock: 1,
     },
     {
       id: "campfire-smores",
@@ -78,7 +78,7 @@ export const useGetItemListings = () => {
       name: "Campfire Smores",
       description:
         "Classic Cookie with dark cholocate chip + Marshmallow on top",
-      stock: 0,
+      stock: 1,
     },
   ];
 
