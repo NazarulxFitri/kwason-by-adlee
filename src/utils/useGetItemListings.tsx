@@ -80,6 +80,26 @@ export const useGetItemListings = () => {
         "Classic Cookie with dark cholocate chip + Marshmallow on top",
       stock: 1,
     },
+    {
+      id: "campfire-smores",
+      url: `/media/smores.jpeg`,
+      alt: "theozziecookies",
+      price: 16.00,
+      name: "MOCHI CHEESEE CAKE",
+      description:
+        "MOCHI CHEESE CAKE",
+      stock: 1,
+    },
+    {
+      id: "campfire-smores",
+      url: `/media/smores.jpeg`,
+      alt: "theozziecookies",
+      price: 13.00,
+      name: "TIRAMISU CAKE",
+      description:
+        "TIRAMISU",
+      stock: 1,
+    },
   ];
 
   return {
