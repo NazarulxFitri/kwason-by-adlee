@@ -18,7 +18,7 @@ const ListingModule: React.FC<ListingModuleProps> = () => {
     <Box mt={8} className={`animate__animated animate__fadeInUp`}>
       <Grid container spacing={2} mt={2}>
         {items?.map((i, idx) => (
-          <Grid key={idx} item xs={12} sm={6} md={4}>
+          <Grid key={idx} item xs={6} sm={6} md={4}>
             <CardListing item={i} />
           </Grid>
         ))}

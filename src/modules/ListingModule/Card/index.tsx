@@ -31,7 +31,7 @@ const CardListing: React.FC<CardListingProps> = ({ item }) => {
   const [showSummary, setShowSummary] = useRecoilState(orderSummary);
 
   function handleClick() {
-    const newItem = { name: item?.name, price: item?.price }; 
+    const newItem = { name: item?.name, price: item?.price };
     setCart((existedArray) => [...existedArray, newItem]);
     setBanner({
       message: `You have successfully added <b>${item?.name}</b> into your cart`,
@@ -53,15 +53,14 @@ const CardListing: React.FC<CardListingProps> = ({ item }) => {
       {item.stock < 1 &&
         <Box>
           <Box sx={{ background: "#EFEFEF", opacity: "0.6", cursor: "pointer", height: "100%", width: "100%", position: "absolute", zIndex: 2 }} />
-          <Box sx={{ background: "pink", opacity: "1", cursor: "pointer", position: "absolute", zIndex: 3, top: "0", right: "0", px: 2, py: 1  }}>
+          <Box sx={{ background: "pink", opacity: "1", cursor: "pointer", position: "absolute", zIndex: 3, top: "0", right: "0", px: 2, py: 1 }}>
             <Text
-                sx={{ fontSize: "16px", fontWeight: "300" }}
-                text={`Out of Stock`}
-              />
+              sx={{ fontSize: "16px", fontWeight: "300" }}
+              text={`Out of Stock`}
+            />
           </Box>
         </Box>
-}
-
+      }
       <Image
         src={item.url}
         alt={item.alt}
@@ -70,6 +69,7 @@ const CardListing: React.FC<CardListingProps> = ({ item }) => {
         style={{
           display: "block",
           height: "100%",
+          maxHeight: "477px",
           width: "100%",
         }}
       />
@@ -77,24 +77,23 @@ const CardListing: React.FC<CardListingProps> = ({ item }) => {
         <Box
           className={`animate__animated animate__fadeInUp`}
           sx={{
-            borderTopRightRadius: "16px",
-            borderTopLeftRadius: "16px",
-            color: "#FFF",
+            // borderTopRightRadius: "16px",
+            // borderTopLeftRadius: "16px",
+            // color: "#FFF",
             cursor: "pointer",
             p: 2,
-            position: "absolute",
-            bottom: "0",
-            background: "rgba(0,0,0,0.6)",
+            border: "1px solid #EFEFEF",
+            // position: "absolute",
+            // bottom: "0",
+            // background: "rgba(0,0,0,0.6)",
             width: "100%",
           }}
         >
           <Text
             sx={{
-              fontSize: "24px",
-              fontFamily:
-                `${nothingYouCouldDo.style.fontFamily} !important` || "auto",
+              fontSize: "16px",
+              minHeight: {xs : "72px", md: "unset"}
             }}
-            className={nothingYouCouldDo.className}
             text={item.name}
           />
           <Text
@@ -102,7 +101,7 @@ const CardListing: React.FC<CardListingProps> = ({ item }) => {
             text={`RM ${item.price}`}
           />
           <Grid container mt={1} columnSpacing={1}>
-            <Grid item xs={6}>
+            <Grid item xs={12} md={6}>
               <Box
                 onClick={handleClick}
                 sx={{
@@ -147,7 +146,7 @@ const CardListing: React.FC<CardListingProps> = ({ item }) => {
                 />
               </Box>
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={12} md={6}>
               <Box
                 sx={{
                   border: "1px solid #FFF",

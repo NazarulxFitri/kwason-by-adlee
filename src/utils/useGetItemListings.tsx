@@ -81,25 +81,35 @@ export const useGetItemListings = () => {
       stock: 1,
     },
     {
-      id: "campfire-smores",
-      url: `/media/smores.jpeg`,
+      id: "mozie",
+      url: `/media/mochi.jpeg`,
       alt: "theozziecookies",
       price: 16.00,
-      name: "MOCHI CHEESEE CAKE",
+      name: "Ozzie MOCHI CHEESEE CAKE",
       description:
         "MOCHI CHEESE CAKE",
       stock: 1,
     },
     {
-      id: "campfire-smores",
-      url: `/media/smores.jpeg`,
+      id: "tiramisu",
+      url: `/media/tiramisu.jpeg`,
       alt: "theozziecookies",
       price: 13.00,
-      name: "TIRAMISU CAKE",
+      name: "Ozzie TIRAMISU",
       description:
         "TIRAMISU",
       stock: 1,
     },
+    {
+      id: "combo-best-seller",
+      url: `/media/combo-best-seller.jpg`,
+      alt: "theozziecookies",
+      price: 25.00,
+      name: "COMBO BEST SELLER",
+      description:
+        "COMBO BEST SELLER",
+      stock: 1,
+    }
   ];
 
   return {
