@@ -94,7 +94,7 @@ export const useGetItemListings = () => {
       id: "tiramisu",
       url: `/media/tiramisu.jpeg`,
       alt: "theozziecookies",
-      price: 13.00,
+      price: 14.00,
       name: "Ozzie TIRAMISU",
       description:
         "TIRAMISU",
